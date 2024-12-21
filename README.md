@@ -1,10 +1,11 @@
-# spo0kyDev.github.io
 # Spo0ky's Portfolio
+
+Hosted at: [spo0ky.dev](https://spo0ky.dev)
 
 > *"The truth is out there."*  
 > This site is a reflection of my journey—uncovering the unknown, solving complex problems, and creating something meaningful.
 
-Welcome to my personal portfolio, a space where I showcase my work, skills, and projects in cybersecurity, programming, and sound design. Like any quest for truth, this portfolio evolves as I learn and grow.
+Welcome to my personal portfolio, a space where I showcase my work, skills, and projects in cybersecurity, programming, and sound design. As with any persuit of understanding, this portfolio evolves as i grow.
 
 ## About
 
