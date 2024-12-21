@@ -1,1 +1,16 @@
 @import "jekyll-theme-hacker";
+
+body {
+    background-color: #101010; /* Darker background */
+    color: #00ff00; /* Neon green text */
+}
+
+h1, h2, h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    color: #00ccff;
+    text-decoration: none;
+}
+
