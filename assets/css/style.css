@@ -1,0 +1,96 @@
+/* General styles for the entire site */
+body {
+    font-family: 'Fira Code', monospace; /* Clean, coding-inspired font */
+    background-color: #000000; /* Matrix-inspired black background */
+    color: #00ff00; /* Neon green text for the body */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Improves text readability */
+}
+
+/* Headings: h1, h2, h3 */
+h1, h2, h3 {
+    color: #03A062; /* Cyan color for headings */
+    text-shadow: 0 0 10px #003B00; /* Subtle glowing effect for mystery */
+}
+
+/* Header styles */
+header {
+    display: flex; /* Enables flexbox for layout */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space out title and links */
+    padding: 20px; /* Add some spacing */
+    background-color: #111111; /* Slightly lighter black */
+    border-bottom: 1px solid #00ff00; /* Green line at the bottom */
+}
+
+/* Title styles (centered) */
+header h1 {
+    color:00FF41; /* green color */
+    text-shadow: 0 0 10px #03A062; /* Subtle glow */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center align */
+    flex: 1; /* Allow the title to occupy space */
+}
+
+/* Navigation styles (aligned left) */
+header nav {
+    flex: 1; /* Allow nav to occupy space */
+}
+
+header nav ul {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox for horizontal alignment */
+    gap: 20px; /* Space between links */
+}
+
+header nav ul li {
+    display: inline-block; /* Ensure links are inline */
+}
+
+header nav ul li a {
+    color: #00FF41; /* Cyan for links */
+    text-decoration: none; /* Remove underline */
+}
+
+header nav ul li a:hover {
+    color: #00ff00; /* Green hover effect */
+}
+
+/* General link styles */
+a {
+    color: #00ccff; /* Default link color: cyan */
+    text-decoration: none; /* Remove underline */
+}
+a:hover {
+    color: #ff0044; /* Red color on hover for contrast */
+}
+
+/* Blockquotes: for quotes and callouts */
+blockquote {
+    font-family: 'Special Elite', cursive; /* Typewriter-like font for mystery */
+    color: #ffffff; /* White text for visibility */
+    border-left: 4px solid #00ff00; /* Green border to the left */
+    padding: 10px 20px; /* Spacing inside the blockquote */
+    margin: 20px 0; /* Space around the blockquote */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
+}
+
+/* Code blocks: preformatted text and inline code */
+pre, code {
+    background-color: #111111; /* Dark background for contrast */
+    color: #00ff00; /* Neon green text */
+    padding: 10px; /* Spacing inside code blocks */
+    border-radius: 5px; /* Rounded corners */
+    overflow-x: auto; /* Horizontal scrolling for long lines */
+}
+
+/* Footer section */
+footer {
+    color: #ffffff; /* White text for footer content */
+    text-align: center; /* Center-align footer text */
+    padding: 20px 0; /* Spacing above and below the footer */
+    border-top: 1px solid #00ff00; /* Green line separating the footer */
+}
