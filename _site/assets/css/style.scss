@@ -1,0 +1,21 @@
+@import "jekyll-theme-hacker"; /* Import the original Hacker theme */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap'); /* Fira Code */
+
+body {
+    background-color: #101010; /* Darker background */
+    color: #00ff00; /* Neon green text */
+    font-family: 'Fira Code', monospace; /* Use Fira Code for all text */
+}
+
+h1, h2, h3 {
+    font-family: 'Fira Code', monospace; /* Ensure headings also use Fira Code */
+}
+
+a {
+    color: #00ccff; /* Light blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
