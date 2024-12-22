@@ -26,7 +26,7 @@ header {
 
 /* Title styles (centered) */
 header h1 {
-    color:00FF41; /* green color */
+    color: #00FF41; /* Green color */
     text-shadow: 0 0 10px #03A062; /* Subtle glow */
     margin: 0; /* Remove default margin */
     text-align: center; /* Center align */
@@ -51,18 +51,20 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #00FF41; /* Cyan for links */
+    color: #00FF41; /* Green for links */
     text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 header nav ul li a:hover {
-    color: #00ff00; /* Green hover effect */
+    color: #00ccff; /* Cyan hover effect */
 }
 
 /* General link styles */
 a {
     color: #00ccff; /* Default link color: cyan */
     text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 a:hover {
     color: #ff0044; /* Red color on hover for contrast */
@@ -93,4 +95,28 @@ footer {
     text-align: center; /* Center-align footer text */
     padding: 20px 0; /* Spacing above and below the footer */
     border-top: 1px solid #00ff00; /* Green line separating the footer */
+}
+
+/* Revolving Quote Section */
+#revolving-quote {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    color:  #00FF41; /* Dark Green */
+    font-family: 'Special Elite'; /* Typewriter-style font */
+    font-size: 1.5em;
+    text-shadow: 0 0 10px #00ccff; /* Subtle glow */
+    border: 2px solid #00ff00; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+}
+
+#quote {
+    animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }

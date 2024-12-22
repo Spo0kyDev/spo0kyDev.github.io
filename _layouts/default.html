@@ -1,17 +1,61 @@
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+ <!-- Google Fonts for Fira Code and Special Elite -->
+ <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
 
-<header>
-    <h1>{{ site.title }}</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/projects/">Projects</a></li>
-        </ul>
-    </nav>
-</header>
+<body>
+    <!-- Header Section -->
+    <header id="main-header">
+        <!-- Site Title -->
+        <h1>{{ site.title }}</h1>
 
-<footer>
-    <p>{{ site.mystique }}</p>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-</footer>
+        <!-- Navigation Menu -->
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/projects/">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="main-content">
+        <!-- Revolving Quote Section -->
+        <div id="revolving-quote">
+            <p id="quote"></p>
+        </div>
+
+        <!-- Introduction Section -->
+        <section id="welcome-section">
+            <h2>Welcome</h2>
+            <p>Explore the mysteries of technology and the unknown. Stay curious, keep learning, and dive into the code.</p>
+        </section>
+
+        <!-- Additional Content Section -->
+        <section id="additional-section">
+            <h2>Projects</h2>
+            <p>In Progress...</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="main-footer">
+        <!-- Custom Message -->
+        <p>{{ site.mystique }}</p>
+
+        <!-- Copyright Notice -->
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+
+    <!-- JavaScript for Revolving Quotes -->
+    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+</body>
+</html>
