@@ -287,4 +287,18 @@ footer {
   #about-section a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 600px) {
+    /* Stack nav items vertically on small screens */
+    header nav ul {
+      flex-direction: column;
+      gap: 10px; /* or whatever spacing you want */
+    }
+    
+    /* Reduce or remove header padding if it's too large */
+    header {
+      padding: 10px;
+    }
+  }
+  
   
