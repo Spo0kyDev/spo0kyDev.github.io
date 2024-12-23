@@ -4,20 +4,27 @@ const quotes = [
     "Trust no one.",
     "I want to believe.",
     "The code reveals all.",
-    "Nothing happens by chance."
+    "Nothing happens by chance.",
 ];
 
-// Function to display quotes
+// Current index of the quote
 let currentIndex = 0;
 
+// Function to display the current quote
 function showQuote() {
     const quoteElement = document.getElementById("quote");
-    quoteElement.textContent = quotes[currentIndex];
-    currentIndex = (currentIndex + 1) % quotes.length; // Loop through quotes
+    if (quoteElement) {
+        // Update the text content of the quote element
+        quoteElement.textContent = quotes[currentIndex];
+        // Move to the next quote, looping back to the start if needed
+        currentIndex = (currentIndex + 1) % quotes.length;
+    } else {
+        console.warn("Quote element not found! Check your HTML.");
+    }
 }
 
-// Initial display
-showQuote();
-
-// Change quote every 5 seconds
-setInterval(showQuote, 5000);
+// Ensure the script runs after the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    showQuote();
+    setInterval(showQuote, 10000);
+});

@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
- <!-- Google Fonts for Fira Code and Special Elite -->
- <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Page title defaults to site title unless specified -->
+  <title>{{ page.title | default: site.title }}</title>
+
+  <!-- Google Fonts for Fira Code, Special Elite, and VT323 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Special+Elite&family=VT323&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Link to your custom stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Favicon links -->
+  <link
+    rel="icon"
+    href="{{ '/assets/icons/favicon.ico' | relative_url }}"
+    type="image/x-icon"
+  />
+  <link
+    rel="icon"
+    href="{{ '/assets/icons/favicon-32x32.png' | relative_url }}"
+    sizes="32x32"
+    type="image/png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="{{ '/assets/icons/apple-touch-icon.png' | relative_url }}"
+    sizes="180x180"
+  />
+  <link
+    rel="icon"
+    href="{{ '/assets/icons/android-chrome-192x192.png' | relative_url }}"
+    sizes="192x192"
+    type="image/png"
+  />
+  <!-- JavaScript for Revolving Quotes -->
+  <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header id="main-header">
-        <!-- Site Title -->
-        <h1>{{ site.title }}</h1>
+  <!-- Header Section -->
+  <header id="main-header">
+    <!-- Site Title -->
+    <h1>{{ site.title }}</h1>
 
-        <!-- Navigation Menu -->
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/projects/">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation Menu -->
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/projects/">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Main Content Section -->
-    <main id="main-content">
-        <!-- Revolving Quote Section -->
-        <div id="revolving-quote">
-            <p id="quote"></p>
-        </div>
+  <!-- Main Content Section (populated by child pages) -->
+  <main id="main-content">
+    {{ content }}
+  </main>
 
-        <!-- Introduction Section -->
-        <section id="welcome-section">
-            <h2>Welcome</h2>
-            <p>Explore the mysteries of technology and the unknown. Stay curious, keep learning, and dive into the code.</p>
-        </section>
+  <!-- Footer Section -->
+  <footer id="main-footer">
+    <!-- Custom Message -->
+    <p>{{ site.mystique }}</p>
 
-        <!-- Additional Content Section -->
-        <section id="additional-section">
-            <h2>Projects</h2>
-            <p>In Progress...</p>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer id="main-footer">
-        <!-- Custom Message -->
-        <p>{{ site.mystique }}</p>
-
-        <!-- Copyright Notice -->
-        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-    </footer>
-
-    <!-- JavaScript for Revolving Quotes -->
-    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
+    <!-- Copyright -->
+    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+  </footer>
 </body>
+
 </html>

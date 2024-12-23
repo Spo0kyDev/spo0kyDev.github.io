@@ -1,122 +1,290 @@
-/* General styles for the entire site */
+/********************************************
+ * 1) COLOR VARIABLES
+ ********************************************/
+:root {
+  --vampire-black: #0D0208;
+  --dark-green:    #003B00;
+  --islamic-green: #008F11;
+  --malachite:     #00FF41;
+  --white:         #ffffff;
+  --red:           #ff0044;
+}
+
+/********************************************
+ * 2) GLOBAL STYLES
+ ********************************************/
 body {
-    font-family: 'Fira Code', monospace; /* Clean, coding-inspired font */
-    background-color: #000000; /* Matrix-inspired black background */
-    color: #00ff00; /* Neon green text for the body */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6; /* Improves text readability */
+  font-family: 'Fira Code', monospace;
+  background-color: var(--vampire-black);
+  color: var(--malachite);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+
+  /* Optional CRT textures (uncomment if you have them):
+  background-image: url("crt-texture.png"), url("scanline.png");
+  background-size: cover, 100% 4px;
+  background-position: center center, top center;
+  background-attachment: fixed;
+  */
 }
 
-/* Headings: h1, h2, h3 */
+/* Basic heading glow */
 h1, h2, h3 {
-    color: #03A062; /* Cyan color for headings */
-    text-shadow: 0 0 10px #003B00; /* Subtle glowing effect for mystery */
+  color: var(--malachite);
+  text-shadow:
+    0 0 5px  var(--malachite),
+    0 0 10px var(--malachite),
+    0 0 20px var(--malachite);
 }
 
-/* Header styles */
+/********************************************
+ * 3) HEADER & NAV
+ ********************************************/
 header {
-    display: flex; /* Enables flexbox for layout */
-    align-items: center; /* Vertically align items */
-    justify-content: space-between; /* Space out title and links */
-    padding: 20px; /* Add some spacing */
-    background-color: #111111; /* Slightly lighter black */
-    border-bottom: 1px solid #00ff00; /* Green line at the bottom */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--vampire-black);
+  border-bottom: 1px solid var(--malachite);
 }
 
-/* Title styles (centered) */
-header h1 {
-    color: #00FF41; /* Green color */
-    text-shadow: 0 0 10px #03A062; /* Subtle glow */
-    margin: 0; /* Remove default margin */
-    text-align: center; /* Center align */
-    flex: 1; /* Allow the title to occupy space */
-}
-
-/* Navigation styles (aligned left) */
-header nav {
-    flex: 1; /* Allow nav to occupy space */
-}
-
+/* Horizontal nav */
 header nav ul {
-    list-style: none; /* Remove default list styling */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Flexbox for horizontal alignment */
-    gap: 20px; /* Space between links */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
-
 header nav ul li {
-    display: inline-block; /* Ensure links are inline */
+  display: inline-flex;
 }
-
 header nav ul li a {
-    color: #00FF41; /* Green for links */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth hover effect */
+  color: var(--malachite);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-
 header nav ul li a:hover {
-    color: #00ccff; /* Cyan hover effect */
+  color: var(--red);
 }
 
-/* General link styles */
-a {
-    color: #00ccff; /* Default link color: cyan */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth hover effect */
-}
-a:hover {
-    color: #ff0044; /* Red color on hover for contrast */
+/********************************************
+ * 4) SPO0KY LOGO (GLITCH + WIGGLE)
+ ********************************************/
+/* The main h1 text + red ghost */
+header h1 {
+  position: relative;
+  margin: 0 20px 0 0;
+  flex: 1;
+  font-family: 'Special Elite', cursive;
+  font-size: 4em;
+  color: var(--malachite);
+  text-align: left;
+  text-shadow: 0 0 3px var(--malachite);
+
+  animation:
+    main-glitch-flicker 4s infinite alternate ease-in-out,
+    spooky-wiggle       2s infinite ease-in-out;
 }
 
-/* Blockquotes: for quotes and callouts */
-blockquote {
-    font-family: 'Special Elite', cursive; /* Typewriter-like font for mystery */
-    color: #ffffff; /* White text for visibility */
-    border-left: 4px solid #00ff00; /* Green border to the left */
-    padding: 10px 20px; /* Spacing inside the blockquote */
-    margin: 20px 0; /* Space around the blockquote */
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle transparent background */
+/* Red ghost behind h1 */
+header h1::before {
+  content: "spo0ky";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--red);
+  font-family: inherit;
+  font-size: inherit;
+  text-shadow: 0 0 3px var(--red);
+  z-index: -1;
+  clip: rect(0, 900px, 0, 0);
+
+  animation: glitch-offset 4s infinite linear alternate-reverse;
 }
 
-/* Code blocks: preformatted text and inline code */
-pre, code {
-    background-color: #111111; /* Dark background for contrast */
-    color: #00ff00; /* Neon green text */
-    padding: 10px; /* Spacing inside code blocks */
-    border-radius: 5px; /* Rounded corners */
-    overflow-x: auto; /* Horizontal scrolling for long lines */
+/********************************************
+ * 5) EXTRA GREEN ARTIFACT LAYERS
+ ********************************************/
+/* The <span id="green-twitch"> inside h1 */
+#green-twitch {
+  position: relative;
+  animation: green-twitch 2.5s infinite steps(2, end);
 }
 
-/* Footer section */
-footer {
-    color: #ffffff; /* White text for footer content */
-    text-align: center; /* Center-align footer text */
-    padding: 20px 0; /* Spacing above and below the footer */
-    border-top: 1px solid #00ff00; /* Green line separating the footer */
+/* First green ghost: ::before */
+#green-twitch::before {
+  content: "spo0ky";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--dark-green);
+  font-family: inherit;
+  font-size: inherit;
+  opacity: 0.5;
+  z-index: -2;
+  clip: rect(0, 900px, 0, 0);
+
+  animation: green-artifact-1 2s infinite linear alternate-reverse;
 }
 
-/* Revolving Quote Section */
+/* Second green ghost: ::after */
+#green-twitch::after {
+  content: "spo0ky";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: var(--dark-green);
+  font-family: inherit;
+  font-size: inherit;
+  opacity: 0.2;
+  z-index: -3;
+  clip: rect(0, 900px, 0, 0);
+
+  animation: green-artifact-2 3s infinite steps(2, end);
+}
+
+/********************************************
+ * 6) KEYFRAMES
+ ********************************************/
+/* 6a) main-glitch-flicker */
+@keyframes main-glitch-flicker {
+  0%   { opacity: 0.8; text-shadow: 0 0 3px var(--malachite); }
+  20%  { opacity: 1;   text-shadow: 0 0 10px var(--malachite); }
+  40%  { opacity: 0.6; text-shadow: 0 0 5px var(--malachite); }
+  60%  { opacity: 1;   text-shadow: 0 0 15px var(--malachite); }
+  80%  { opacity: 0.7; text-shadow: 0 0 5px var(--malachite); }
+  100% { opacity: 1;   text-shadow: 0 0 10px var(--malachite); }
+}
+
+/* 6b) Wiggle the entire h1 */
+@keyframes spooky-wiggle {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  20%  { transform: translate(2px, -2px) rotate(-1deg); }
+  40%  { transform: translate(-3px, 1px) rotate(1deg); }
+  60%  { transform: translate(2px, 3px) rotate(-1deg); }
+  80%  { transform: translate(-1px, -1px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* 6c) Red ghost offset */
+@keyframes glitch-offset {
+  0%   { clip: rect(10px, 9999px, 60px, 0); transform: translate(-3px, -3px); }
+  20%  { clip: rect(20px, 9999px, 40px, 0); transform: translate(3px, 3px);   }
+  40%  { clip: rect(30px, 9999px, 50px, 0); transform: translate(-3px, 1px);  }
+  60%  { clip: rect(10px, 9999px, 80px, 0); transform: translate(3px, -2px);  }
+  80%  { clip: rect(25px, 9999px, 25px, 0); transform: translate(-1px, 2px);  }
+  100% { clip: rect(5px, 9999px, 60px, 0); transform: translate(2px, -1px);   }
+}
+
+/********************************************
+ * 7) Extra Green Ghosts
+ ********************************************/
+@keyframes green-twitch {
+  0%   { transform: translate(0,0); }
+  10%  { transform: translate(-2px,-1px); }
+  20%  { transform: translate(3px,2px);   }
+  30%  { transform: translate(-3px,1px);  }
+  40%  { transform: translate(2px,-2px);  }
+  50%  { transform: translate(-1px,-1px); }
+  60%  { transform: translate(3px,2px);   }
+  70%  { transform: translate(0px,-3px);  }
+  80%  { transform: translate(-2px,2px);  }
+  90%  { transform: translate(2px,-2px);  }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes green-artifact-1 {
+  0%   { clip: rect(10px, 9999px, 60px, 0); transform: translate(2px, 0); }
+  25%  { clip: rect(30px, 9999px, 25px, 0); transform: translate(-3px, 2px); }
+  50%  { clip: rect(5px, 9999px, 50px, 0);  transform: translate(2px, -2px); }
+  75%  { clip: rect(20px, 9999px, 40px, 0); transform: translate(-1px, 1px); }
+  100% { clip: rect(10px, 9999px, 60px, 0); transform: translate(0, 0); }
+}
+
+@keyframes green-artifact-2 {
+  0%   { clip: rect(0, 9999px, 0, 0);       transform: translate(-2px, -2px); }
+  20%  { clip: rect(25px, 9999px, 30px, 0); transform: translate(4px, 1px);    }
+  40%  { clip: rect(15px, 9999px, 50px, 0); transform: translate(-1px, 2px);   }
+  60%  { clip: rect(8px, 9999px, 40px, 0);  transform: translate(3px, -1px);   }
+  80%  { clip: rect(20px, 9999px, 25px, 0); transform: translate(-2px, 3px);   }
+  100% { clip: rect(0, 9999px, 0, 0);       transform: translate(0, 0);        }
+}
+
+/********************************************
+ * 8) REVOLVING QUOTE
+ ********************************************/
 #revolving-quote {
-    text-align: center;
-    margin: 40px auto;
-    padding: 20px;
-    color:  #00FF41; /* Dark Green */
-    font-family: 'Special Elite'; /* Typewriter-style font */
-    font-size: 1.5em;
-    text-shadow: 0 0 10px #00ccff; /* Subtle glow */
-    border: 2px solid #00ff00; /* Green border */
-    border-radius: 10px; /* Rounded corners */
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  text-align: center;
+  margin: 10px auto;
+  padding: 5px;
+  color: var(--malachite);
+  font-family: 'Special Elite', cursive;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px var(--dark-green);
+  border: 2px solid var(--malachite);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #quote {
-    animation: fade 1s ease-in-out;
+  animation: fade 10s ease-in-out infinite;
+}
+@keyframes fade {
+  0%   { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-@keyframes fade {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+/********************************************
+ * 9) FOOTER
+ ********************************************/
+footer {
+  text-align: center;
+  color: var(--white);
+  padding: 20px 0;
+  border-top: 1px solid var(--malachite);
 }
+
+/**********************************************
+ * 10) About Page Styles
+ *********************************************/
+#about-section {
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+  
+  #about-section h2 {
+    font-family: 'Special Elite', cursive;
+    color: #00ff00;
+    text-align: center;
+  }
+  
+  #about-section p {
+    font-family: 'Fira Code', monospace;
+    color: #ffffff;
+  }
+  
+  #about-section ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: #00ccff;
+  }
+  
+  #about-section a {
+    color: #00ff00;
+    text-decoration: none;
+  }
+  
+  #about-section a:hover {
+    text-decoration: underline;
+  }
+  

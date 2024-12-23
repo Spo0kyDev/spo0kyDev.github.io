@@ -1,42 +1,18 @@
 ---
 layout: default
+title: Home
 ---
+<!-- Home Page Content -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-    <header>
-        <h1>{{ site.title }}</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/projects/">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Revolving Quote Section -->
+<section id="quote-section">
+    <div id="revolving-quote">
+      <p id="quote"></p> <!-- Quote text will be injected here -->
+    </div>
+  </section>
 
-    <main>
-        <div id="revolving-quote">
-            <p id="quote"></p>
-        </div>
-        <section>
-            <h2>Welcome</h2>
-            <p>Explore the mysteries of technology and the unknown. Stay curious.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>{{ site.mystique }}</p>
-        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-    </footer>
-
-    <script src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
-</body>
-</html>
+<!-- Welcome Section -->
+<section id="welcome-section">
+  <h2>Welcome</h2>
+  <p>This site is a work in progress</p>
+</section>
